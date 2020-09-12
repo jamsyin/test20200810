@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<JLQStudent.Models.Student>
+@{ViewBag.Title = "学生页面详情-From Home/Index.cshtml";}
+
+<div class="card-deck">
+    @foreach (var student in Model)
+    {
+    <div class="card m-3">
+        <div class="card-header">
+            <h3 class="card-title">@student.Name</h3>
+        </div>
+        <img class="card-img-top  " src="~/images/noimage.png" asp-append-version="true" />
+
+        <div class="card-body text-center">
+            <h5 class="card-title">主修科目：@student.Major</h5>
+        </div>
+
+        <div class="card-footer text-center">
+
+
+            <a asp-controller="Home" class="btn btn-info" asp-action="Details" asp-route-id="@student.Id">查看</a>
+            <a hasp-controller="Home" class="btn btn-info" asp-action="Update" asp-route-id="@student.Id">编辑</a>
+            <a asp-controller="Home" class="btn btn-info" asp-action="Delete" asp-route-id="@student.Id">删除</a>
+        </div>
+    </div>
+    }
+</div>
+
+
+
+
+
+
